@@ -20,6 +20,14 @@
 2. 进入页面后即可进行用户管理操作
 3. 数据会自动保存到浏览器本地存储
 
+### 部署到 Cloudflare
+
+仓库已提供 `wrangler.jsonc`，使用 Cloudflare Workers 的静态资源上传方式部署当前目录文件。
+
+- 本地部署命令：
+  - `npx wrangler versions upload`
+- 在 Cloudflare CI 中同样可直接使用以上命令
+
 ### 文件结构
 
 - `index.html`：页面结构
