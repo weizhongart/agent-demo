@@ -1,0 +1,193 @@
+:root {
+  color-scheme: light;
+  font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #1d2939;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #101828;
+  color: #fff;
+  padding: 24px 16px;
+}
+
+.sidebar h1 {
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #98a2b3;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.sidebar nav a.active {
+  background: #344054;
+  color: #fff;
+}
+
+.content {
+  padding: 24px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+h2 {
+  margin: 0;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary-item,
+.card {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #eaecf0;
+}
+
+.summary-item {
+  padding: 14px;
+}
+
+.summary-item strong {
+  display: block;
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+.card {
+  padding: 16px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+input,
+select,
+button {
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+input,
+select {
+  background: #fff;
+}
+
+button {
+  cursor: pointer;
+  background: #fff;
+}
+
+button.primary {
+  background: #1570ef;
+  color: #fff;
+  border-color: #1570ef;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 920px;
+}
+
+th,
+td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #eaecf0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.status {
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.status.active {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.status.disabled {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+form {
+  padding: 16px;
+  width: 340px;
+  display: grid;
+  gap: 10px;
+}
+
+form h3 {
+  margin: 0 0 8px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+
+menu {
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+}
