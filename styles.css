@@ -192,12 +192,14 @@ menu {
   gap: 8px;
 }
 
-.status.on {
+.status.on,
+.status.in {
   background: #ecfdf3;
   color: #027a48;
 }
 
-.status.off {
+.status.off,
+.status.out {
   background: #fef3f2;
   color: #b42318;
 }
