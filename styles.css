@@ -60,7 +60,7 @@ h2 {
 
 .summary {
   display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -118,6 +118,12 @@ button.primary {
   border-color: #1570ef;
 }
 
+button.warn {
+  border-color: #f79009;
+  color: #b54708;
+  background: #fffaeb;
+}
+
 .table-wrapper {
   overflow-x: auto;
 }
@@ -125,7 +131,7 @@ button.primary {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 920px;
+  min-width: 1040px;
 }
 
 th,
@@ -150,6 +156,18 @@ td {
 .status.disabled {
   background: #fef3f2;
   color: #b42318;
+}
+
+.status.locked {
+  background: #fffaeb;
+  color: #b54708;
+}
+
+.status-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
 }
 
 .actions {
@@ -182,6 +200,18 @@ label {
   display: grid;
   gap: 4px;
   font-size: 13px;
+}
+
+label.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  grid-template-columns: unset;
+}
+
+label.checkbox-row input[type="checkbox"] {
+  width: auto;
+  margin: 0;
 }
 
 menu {

@@ -37,6 +37,11 @@
               <option value="VIP">VIP</option>
               <option value="企业客户">企业客户</option>
             </select>
+            <select id="lockFilter" title="按账户锁定状态筛选">
+              <option value="all">全部锁定状态</option>
+              <option value="unlocked">未锁定</option>
+              <option value="locked">已锁定</option>
+            </select>
             <button id="resetFilters">重置筛选</button>
           </div>
 
@@ -84,6 +89,10 @@
             <option value="active">正常</option>
             <option value="disabled">禁用</option>
           </select>
+        </label>
+        <label class="checkbox-row">
+          <input id="lockedInput" type="checkbox" />
+          账户已锁定（禁止登录，与「禁用」独立）
         </label>
 
         <menu>
