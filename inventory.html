@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电商管理后台 - 库存管理</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>电商管理后台</h1>
+        <nav>
+          <a href="./index.html">用户管理</a>
+          <a href="./products.html">商品管理</a>
+          <a class="active" href="./inventory.html">库存管理</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <header class="page-header">
+          <h2>库存管理</h2>
+          <button id="createRecordButton" class="primary">新建记录</button>
+        </header>
+
+        <section class="summary" id="summaryCards"></section>
+
+        <section class="card">
+          <div class="toolbar">
+            <input id="searchInput" type="text" placeholder="搜索商品名称" />
+            <select id="typeFilter">
+              <option value="all">全部类型</option>
+              <option value="in">入库</option>
+              <option value="out">出库</option>
+            </select>
+            <button id="resetFilters">重置筛选</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>商品名称</th>
+                  <th>类型</th>
+                  <th>数量</th>
+                  <th>操作人</th>
+                  <th>备注</th>
+                  <th>创建时间</th>
+                  <th>更新时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="inventoryTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="recordDialog">
+      <form id="recordForm" method="dialog">
+        <h3 id="dialogTitle">新建记录</h3>
+        <input type="hidden" id="editingRecordId" />
+
+        <label>商品名称<input id="productNameInput" required minlength="1" maxlength="50" /></label>
+        <label>
+          类型
+          <select id="typeInput" required>
+            <option value="in">入库</option>
+            <option value="out">出库</option>
+          </select>
+        </label>
+        <label>数量<input id="quantityInput" required type="number" min="1" step="1" /></label>
+        <label>操作人<input id="operatorInput" required minlength="1" maxlength="20" /></label>
+        <label>备注<input id="remarkInput" maxlength="100" /></label>
+
+        <menu>
+          <button type="button" id="cancelDialogButton">取消</button>
+          <button class="primary" type="submit">保存</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="./inventory.js"></script>
+  </body>
+</html>
