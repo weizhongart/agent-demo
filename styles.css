@@ -191,3 +191,18 @@ menu {
   justify-content: end;
   gap: 8px;
 }
+
+.status.on {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.status.off {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+.low-stock {
+  color: #b42318;
+  font-weight: 600;
+}

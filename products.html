@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电商管理后台 - 商品管理</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>电商管理后台</h1>
+        <nav>
+          <a href="./index.html">用户管理</a>
+          <a class="active" href="./products.html">商品管理</a>
+        </nav>
+      </aside>
+      <main class="content">
+        <header class="page-header">
+          <h2>商品管理</h2>
+          <button id="createProductButton" class="primary">新建商品</button>
+        </header>
+
+        <section class="summary" id="summaryCards"></section>
+
+        <section class="card">
+          <div class="toolbar">
+            <input id="searchInput" type="text" placeholder="搜索商品名称" />
+            <select id="categoryFilter">
+              <option value="all">全部分类</option>
+              <option value="手机">手机</option>
+              <option value="电脑">电脑</option>
+              <option value="平板">平板</option>
+              <option value="耳机">耳机</option>
+              <option value="智能设备">智能设备</option>
+            </select>
+            <select id="statusFilter">
+              <option value="all">全部状态</option>
+              <option value="on">上架</option>
+              <option value="off">下架</option>
+            </select>
+            <button id="resetFilters">重置筛选</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>商品名称</th>
+                  <th>价格</th>
+                  <th>库存</th>
+                  <th>分类</th>
+                  <th>状态</th>
+                  <th>创建时间</th>
+                  <th>更新时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="productTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="productDialog">
+      <form id="productForm" method="dialog">
+        <h3 id="dialogTitle">新建商品</h3>
+        <input type="hidden" id="editingProductId" />
+
+        <label>商品名称<input id="nameInput" required minlength="2" maxlength="50" /></label>
+        <label>价格<input id="priceInput" required type="number" min="0" step="0.01" /></label>
+        <label>库存<input id="stockInput" required type="number" min="0" step="1" /></label>
+        <label>
+          分类
+          <select id="categoryInput" required>
+            <option value="手机">手机</option>
+            <option value="电脑">电脑</option>
+            <option value="平板">平板</option>
+            <option value="耳机">耳机</option>
+            <option value="智能设备">智能设备</option>
+          </select>
+        </label>
+        <label>
+          状态
+          <select id="statusInput" required>
+            <option value="on">上架</option>
+            <option value="off">下架</option>
+          </select>
+        </label>
+
+        <menu>
+          <button type="button" id="cancelDialogButton">取消</button>
+          <button class="primary" type="submit">保存</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="./products.js"></script>
+  </body>
+</html>
